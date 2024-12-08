@@ -2,7 +2,6 @@
 let cancionActualIndex = 0;
 let modoAleatorio = false;
 let Bucle = false;
-
 let canciones = [];
 let listaDeAudios = {};
 let cancionSonando = null; // Variable global para almacenar el objeto Audio que se está reproduciendo actualmente
@@ -12,9 +11,7 @@ let volumenIcono = document.getElementById("volumenIcono");
 let imagenSidebar = document.getElementById("imagen-portada");
 let duracionCancionBarraProgreso = document.getElementById("duracionCancion");
 let btnAgregarCancion = document.getElementById("btnAgregarCancion");
-let buscador = document.getElementById("buscador");
 let botonFavorito = document.getElementById("botonFavorito");
-
 let mostrarSoloFavoritos = document.getElementById("mostrarSoloFavoritos");
 let mostrarTodas = document.getElementById("mostrarTodas");
 
@@ -429,33 +426,8 @@ mostrarTodas.addEventListener("click", function () {
   cargarCanciones();
 });
 
-buscador.addEventListener("input", buscarCanciones);
-function buscarCanciones() {
-  let busqueda = buscador.value.toLowerCase().trim();
-  if (busqueda === "") {
-    mostrarCanciones(canciones);
-    return;
-  }
 
-  //crea un array con las canciones que coincidan con la busqueda
-  let cancionesEncontradas = canciones.filter((cancion) => {
-    let titulo = cancion.title.toLowerCase();
 
-    // Si la búsqueda es de un solo carácter, muestra todas las canciones que lo contienen
-    if (busqueda.length === 1) {
-      return titulo.includes(busqueda);
-    } else {
-      // Si la búsqueda es de más de un carácter, muestra solo las canciones que coinciden exactamente con como empieza
-      return titulo.startsWith(busqueda);
-    }
-  });
-
-  if (cancionesEncontradas.length === 0) {
-    console.log("No se encontraron canciones que coincidan con la búsqueda.");
-  }
-
-  mostrarCanciones(cancionesEncontradas);
-}
 
 /**
  * Carga las canciones favoritas del localStorage y las muestra en la interfaz.
@@ -477,9 +449,7 @@ async function cargarCancionesFavoritos() {
   // Pasar la lista de canciones favoritas a la función mostrarCanciones
   mostrarCanciones(cancionesFavoritas);
 }
-
 ////////////////////////////////////////////////EVENTO PARA SUBIR UNA CANCION
-
 //Abre el pop up
 document
   .getElementById("btnAgregarCancion")
@@ -496,7 +466,6 @@ document.addEventListener("click", function (event) {
     document.getElementById("popup").style.display = "none"; // Cerrar el popup al hacer clic fuera de ella
   }
 });
-
 //POST
 document
   .getElementById("formAgregarCancion")
@@ -515,7 +484,6 @@ document
       return;
     }
     console.log("Tipo de archivo de la canción:", inputAudiomp3.type);
-
 
     if (inputTitulo.length > 20 || !/^[a-zA-Z\s]*$/.test(inputTitulo)) {
       alert(
@@ -538,7 +506,6 @@ document
       );
       return;
     }
-
     // Crear un objeto FormData para enviar archivos
     const formData = new FormData();
     formData.append("music", inputAudiomp3);
