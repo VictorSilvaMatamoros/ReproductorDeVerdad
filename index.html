@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="sciptOrdenado.js"></script>
+    <title>Music Player</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Filtros</h2>
+            <div class="acordeon">
+                <button class="acordeon-button" id="acordeon">Filtros</button>
+                <div class="acordeon-content">
+                    <button id="mostrarTodas" class="acordeon-button">Todas las canciones</button>
+                    <button id="mostrarSoloFavoritos" class="acordeon-button">Favoritos</button>
+                </div>
+            </div>
+            <br>
+
+            <h2>Portada</h2>
+            <div class="imagenPortada" id="imagenPortada">
+                <img class="imagen-portada" id="imagen-portada" src="">
+            </div>
+        </div>
+        <div class="divCentral">
+            <div class="header">
+                <input type="text" class="buscador" id="buscador" placeholder=" Buscar">
+                <h1>Music</h1>
+                <div class="user">
+                    <img id="imagen-user" src="img/yo.jpg">
+                    <span>Kavote</span>
+                </div>
+                <button class="btnPausaHeader" id="btnPausaHeader">Play/Pause</button>
+                <button class="btnAgregarCancion" id="btnAgregarCancion">Subir Cancion</button>
+                <!-- Botón para abrir el popup -->
+
+<!-- Popup -->
+<div id="popup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <span class="close" id="closePopup">&times;</span>
+        <h2>Agregar Canción</h2>
+        <form id="formAgregarCancion">
+            <label for="inputAudiomp3">Archivo de Audio:</label>
+            <input type="file" id="inputAudiomp3" accept="audio/*" required><br>
+
+            <label for="inputTitulo">Título:</label>
+            <input type="text" id="inputTitulo" required><br>
+
+            <label for="inputArtista">Artista:</label>
+            <input type="text" id="inputArtista" required><br>
+
+            <label for="inputPortada">Portada:</label>
+            <input type="file" id="inputPortada" accept="image/*" required><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+            </div>
+
+            <div class="listaCanciones" id="listaCanciones">
+                
+            </div>
+            <div class="volumen">
+                <span id="volumenIcono"><i class="fas fa-volume-up"></i></span>
+                <input type="range" id="barraVolumen" min="0" max="1" step="0.01" value="1">            
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <button id="btnAnterior">Anterior</button>
+        <button id="btnPlayPause">Play/Pause</button>
+        <button id="btnSiguiente">Siguiente</button>
+        <button id="bucle">Bucle</button>
+        <button id="aleatorio">Aleatorio</button>
+        <input type="range" id="barraProgreso" min="0" max="100" step="0.01" value="0"> <span id="duracion">0:00</span>
+
+    </footer>
+</body>
+
+</html>

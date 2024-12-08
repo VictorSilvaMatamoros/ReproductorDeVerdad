@@ -1,0 +1,338 @@
+body {
+    background-color: #2a2a2a; /* Fondo oscuro */
+    color: #f0e68c; /* Color amarillo claro */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #3b3b3b; /* Fondo de la barra lateral */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.divCentral {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.header {
+    background-color: #4a4a4a; /* Fondo del encabezado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #f0e68c; /* Color amarillo claro */
+}
+
+.btnPausaHeader{
+    background-color: #007acc; /* Azul */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 0 5px; /* Espaciado entre botones */
+}
+.btnAgregarCancion{
+    background-color: #007acc; /* Azul */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 0 5px; /* Espaciado entre botones */
+}
+
+.user{
+    display: flex;
+    align-items: center;
+}
+
+.buscador{
+    border-radius: 8px;
+}
+.user img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.music-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #4a4a4a; /* Línea de separación */
+}
+
+.music-list:hover {
+    background-color: #4a4a4a; /* Color de fondo al pasar el mouse */
+}
+
+.music- list .title {
+    flex: 1;
+    color: #f0e68c; /* Color amarillo claro */
+}
+
+.music-list .artist {
+    flex: 1;
+    text-align: right;
+    color: #f0e68c; /* Color amarillo claro */
+}
+
+.music-list .duration {
+    width: 50px;
+    text-align: right;
+    color: #f0e68c; /* Color amarillo claro */
+}
+
+.listaCanciones {
+    margin-top: 20px; /* Espacio superior para la lista de canciones */
+    text-align: center; 
+    max-height: 470px; /* Altura máxima para la lista */
+    overflow-y: auto;
+}
+
+.btnPausaHeader:hover {
+    background-color: #0056b3; /* Azul oscuro al pasar el mouse */
+}
+
+.datosDeCadaCancion {
+    margin: 10px 0; /* Espacio entre cada canción */
+    padding: 10px; /* Espacio interno para cada contenedor de canción */
+    border: 1px solid #ccc; /* Borde alrededor de cada canción */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #616060; /* Color de fondo para cada canción */
+    display: flex; /* Usar flexbox para alinear los elementos dentro */
+    flex-direction: row; /* Alinear los elementos en columna */
+    align-items: center; 
+    justify-content: space-between;
+    
+}
+
+.datosDeCadaCancion h2,
+.datosDeCadaCancion h3 {
+    margin: 5px 0; /* Espaciado entre el título, artista y duración */
+}
+
+.favorito {
+    margin-top: 10px; /* Espacio superior para el botón de favorito */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    font-size: 24px; /* Tamaño del corazón */
+}
+
+.listaCanciones h2,
+.listaCanciones h3 {
+    margin: 0 10px; /* Espaciado horizontal entre el título y el artista */
+}
+
+#songDuration {
+    margin: 0 10px; /* Espaciado horizontal para la duración */
+}
+
+#favorito {
+    margin-left: 10px; /* Espaciado a la izquierda del botón */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    font-size: 24px; /* Tamaño del corazón */
+}
+#songDuration {
+    display: block; /* Asegura que la duración esté en una nueva línea */
+    margin: 10px 0; /* Espaciado para la duración */
+    color: #f0e68c; /* Color amarillo claro */
+}
+
+.favorito{
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: #f0e68c; /* Color amarillo claro */
+    font-size: 24px; /* Tamaño del corazón */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: transform 0.2s; /* Transición para el efecto de hover */
+    filter: opacity(50%);
+}
+
+.favoritoActivado{
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: #f0e68c; /* Color amarillo claro */
+    font-size: 24px; /* Tamaño del corazón */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: transform 0.2s; /* Transición para el efecto de hover */
+    filter: opacity(100%);
+}
+
+.favorito:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+}
+
+.acordeon {
+    margin-bottom: 20px;
+}
+
+.volumen {
+    align-items: end;
+    display: flex;
+    justify-content: end;
+}
+
+.acordeon-button {
+    background-color: #007acc; /* Azul */
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.acordeon-button:hover {
+    background-color: #005fa3; /* Azul más oscuro */
+}
+
+.acordeon-content {
+    display: none;
+    padding: 10px 0;
+}
+
+footer {
+    background-color: #3b3b3b; /* Fondo del footer */
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer button {
+    background-color: #007acc; /* Azul */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 0 5px; /* Espaciado entre botones */
+}
+
+footer button:hover {
+    background-color: #005fa3; /* Azul más oscuro */
+}
+
+footer input[type="range"] {
+    width: 100%;
+    margin: 0 10px;
+}
+.imagen-portada{
+    background-color: rgba(240, 248, 255, 0.171);
+    display: block;
+    margin-top: auto; /* Empuja la imagen hacia abajo */
+    width: 100%; /* Asegura que la imagen ocupe el ancho completo del contenedor */
+    border-radius: 10px;
+}
+.imagenPortada{
+    background-color: rgba(240, 248, 255, 0.171);
+    display: block;
+    margin-top: auto; /* Empuja la imagen hacia abajo */
+    width: 100%; /* Asegura que la imagen ocupe el ancho completo del contenedor */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+/* Actualización de los nombres de los botones del footer */
+#btnAnterior {
+    background-color: #007acc; /* Azul */
+}
+
+#btnPlayPause {
+    background-color: #007acc; /* Azul */
+}
+
+#btnSiguiente {
+    background-color: #007acc; /* Azul */
+}
+
+#bucle {
+    background-color: #007acc; /* Azul */
+}
+
+#aleatorio {
+    background-color: #007acc; /* Azul */
+}
+
+.active{
+    background-color: #e5e2e2;
+    color: black;
+    transform: scale(1.2);
+}
+
+  .volumen {
+            display: flex;
+            align-items: center;
+        }
+        #volumenIcono {
+            margin-right: 10px; /* Espacio entre el ícono y la barra de volumen */
+        }
+
+        .popup {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(121, 118, 118);
+            background-color: rgba(113, 113, 113, 0.4);
+        }
+        
+        .popup-content {
+            background-color: #5076a5;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        
+        .close {
+            color: #000000;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            cursor: pointer;
+        }
